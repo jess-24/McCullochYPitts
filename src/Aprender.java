@@ -9,8 +9,8 @@ public class Aprender {
     public void valoreWyTeta(){
         w1=(double)Math.round((Math.random()*((-0.5)-0.5)+0.5)*100d)/100d;
         w2=(double)Math.round((Math.random()*((-0.5)-0.5)+0.5)*100d)/100d;
-        //teta=(double)Math.round((Math.random()*(0-0.2)+0.2)*100d)/100d;
-        teta=-0.2;
+        teta=(double)Math.round((Math.random()*((-0.5)-0.5)+0.5)*100d)/100d;
+        //teta=0;
     }
     /*
     -----------------
@@ -45,7 +45,6 @@ public class Aprender {
                 }
                 System.out.println("valor de x::::"+x);
                 if (x >= teta) {
-                    System.out.println("hola");
                     salida_real.add(1);
                 } else {
                     salida_real.add(0);

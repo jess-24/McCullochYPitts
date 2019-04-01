@@ -29,6 +29,7 @@ public class Main {
             case 2:
                 entrada=new Entrada();
                 entrada2=new Entrada();
+                entradas=new ArrayList<Entrada>();
                 System.out.println("Ingresa el dato1 de la entrada 1");
                 entrada.setD1(s.nextInt());
                 System.out.println("Ingresa el dato1 de la entrada 2");

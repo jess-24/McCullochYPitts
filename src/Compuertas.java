@@ -25,7 +25,7 @@ public class Compuertas {
                     aprendizajeExitoso = false;
                 }
             }
-            System.out.println("entrada    salida real");
+            System.out.println("entrada              salida real");
             System.out.println(entradas.get(0).getD1() + "     " + salida_real.get(0));
             if (entradas.get(0).getD2() == 0) {
                 if (salida_real.get(1) != 1) {
@@ -40,17 +40,30 @@ public class Compuertas {
         }while (aprendizajeExitoso==false);
         System.out.println("Aprendizaje exitoso!");
     }
-    public void AprendizajeExitoso(){
-        if (aprendizajeExitoso==false){
-            aprendizajeExitoso=true;
-            aprender.valoreWyTeta();
-        }else {
-            System.out.println("Aprendizaje exitoso!");
-        }
-    }
     public void compuertaOR(ArrayList<Entrada> entradas){
+        do {
+            aprendizajeExitoso = true;
+            aprender.valoreWyTeta();
+            salida_real = aprender.funcionActivacion(entradas, 0);
+            if (entradas.get(0).getD1()==0 && entradas.get(1).getD1()==0){
+                if(salida_real.get(0)!=0) aprendizajeExitoso=false;
+            }
+            if (entradas.get(0).getD2()==0 && entradas.get(1).getD2()==0){
+                if(salida_real.get(1)!=0) aprendizajeExitoso=false;
+            }
+            if (entradas.get(0).getD3()==0 && entradas.get(1).getD3()==0){
+                if(salida_real.get(2)!=0) {aprendizajeExitoso=false;}
+            }
+            if (entradas.get(0).getD4()==0 && entradas.get(1).getD4()==0){
+                if(salida_real.get(3)!=0) aprendizajeExitoso=false;
+            }
+            System.out.println("entrada              salida real");
+            System.out.println(entradas.get(0).getD1() + "  "+entradas.get(1).getD1()+"   "+ salida_real.get(0));
+            System.out.println(entradas.get(0).getD2() + "  "+entradas.get(1).getD2()+"   "+ salida_real.get(1));
+            System.out.println(entradas.get(0).getD3() + "  "+entradas.get(1).getD3()+"   "+ salida_real.get(2));
+            System.out.println(entradas.get(0).getD4() + "  "+entradas.get(1).getD4()+"   "+ salida_real.get(3));
 
-        salida_real=aprender.funcionActivacion(entradas,0);
-
+        }while (aprendizajeExitoso==false);
+        System.out.println("Aprendizaje exitoso!");
     }
 }
